@@ -1,3 +1,17 @@
+
+/**
+ * Purpose : This program take the input from the user and print message using regular expressions.
+ *           ­> Use Regex to do the following
+            i. Replace <<name>> by first name of the user ( assume you are the user)
+            ii. replace <<full name>> by user full name.
+            iii. replace any occurance of mobile number that should be in format 
+               91­xxxxxxxxxx by your contact number.
+            iv. replace any date in the format XX/XX/XXXX by current date.
+ * @author  Asmita Nalawade
+ * @version 1.0
+ * @since   6/12/2018          
+ */
+
 package com.bridgelabz.week3;
 
 import java.util.Date;
@@ -9,6 +23,7 @@ public class RegularExpression {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		//Take the input from user
 		System.out.println("Enter your name");
 		String name = Utility.inputString();
 		String x[] = name.split(" ");

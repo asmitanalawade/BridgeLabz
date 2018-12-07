@@ -1,3 +1,13 @@
+
+/**
+ * Purpose : This program take the input from the user animal and sound and print 
+ *    the lyrics of the poem Old MacDonald had a farm, replace ANIMAL and its SOUND 
+ *    to output the complete the lyrics.
+ * @author  Asmita Nalawade
+ * @version 1.0
+ * @since   6/12/2018          
+ */
+
 package com.bridgelabz.week3;
 
 import utility.Utility;

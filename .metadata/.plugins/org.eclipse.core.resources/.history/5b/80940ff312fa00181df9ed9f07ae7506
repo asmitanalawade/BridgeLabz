@@ -1,0 +1,45 @@
+package com.bridgelabz.week3;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.nio.file.attribute.FileTime;
+
+import utility.Utility;
+
+public class PrimeArray {
+
+	public static void main(String[] args) throws IOException  {
+		// TODO Auto-generated method stub
+		FillPrime ob = new FillPrime();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		System.out.println("Enter the rows and colums");
+		int m = Utility.inputInt();
+		int n = Utility.inputInt();
+		
+		int A[][]  = new int[m][n];
+		int B[] = new int[m*n];
+		
+		
+		System.out.println("Enter the 2D array: ");
+		
+		
+	}
+	boolean isprime(int n) {
+		for(int i = 1; i < n; i++) {
+			while(n % i  == 0) {
+				n++;
+			}
+			if(n == 2) {
+				return true;
+			}else {
+				return false;
+			}
+		 			
+		}
+		return false;
+		
+		}
+
+
+}

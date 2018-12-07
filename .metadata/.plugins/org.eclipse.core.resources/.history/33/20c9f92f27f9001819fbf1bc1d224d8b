@@ -1,0 +1,61 @@
+package com.bridgelabz.searchFunction;
+
+
+
+public class FrequencyCount {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	  String str = " To Be Or Not To Be ";
+	  //Split the words in array
+	  String [] array = str.split(" ");
+	  
+	  for(int i = 0; i < array.length; i++) {
+		 System.out.println(array[i]);
+	  }
+	   
+	  for(int i = 0; i < array.length; i++) {
+		  for(int j = i + 1; j < array.length; j++) {
+			//Sorting the array
+			  if(array[i].compareTo(array[j]) < 0){
+				  String temp = array[i];
+				  array[i] = array[j];
+				  array[j] = temp;
+			  }
+		  }
+		 
+	  }
+	  System.out.println("After sorting array : ");
+	  for(int i = 0; i < array.length; i++) {
+		  System.out.println(array[i]); 
+	  }
+	//Initialize the counter
+	//initialize counter by 1
+      int count = 1;
+     
+      //compare elements in array
+      for(int i=0; i<array.length-1; i++) {
+         
+          for(int j=i+1 ; j< array.length; j++) {
+        	  
+        	  //If array[i] and array[j] arew equal then counter increment
+             if(array[i].equals(array[j])) { 
+                 
+                  count++;
+                 
+                  array[j] = "0"; //replace the repeated string by 0
+              }
+             
+          }
+          if(array[i] != "0") { //if whole string is not 0 print current count
+         
+              System.out.println(array[i] + "-" + count);
+              count = 1; //again initialize the count by 1 for next occurrence of word
+             
+          }
+      }
+	}
+	
+
+}

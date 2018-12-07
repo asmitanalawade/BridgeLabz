@@ -1,0 +1,29 @@
+package com.bridgelabz.searchFunction;
+
+public class FrequencyCount {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	  String [] str = {"To Be Or Not To Be"};
+	  System.out.println("Input string is: " + str);
+	  //creat frequency table for 128
+	  int[]freq = new int[128];
+	  
+	  for(char ch : str.toCharAt()) {
+		  freq[ch]++;
+		  
+	  }
+	  System.out.println("Frequencies : " );
+	  for(int i = 0; i <= freq.length; i++) {
+		if(freq[i]!= 0) {
+			System.out.println((char)i + "-" + freq[i]);
+		}
+	  }
+	  
+	}
+	//public static void frqCount(String x) {
+		
+	//}
+
+}

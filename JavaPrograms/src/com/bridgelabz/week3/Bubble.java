@@ -1,3 +1,12 @@
+
+/**
+ * Purpose : This program take input from user n and print the integer numbers after 
+ *           the bubble sort .
+ * @author  Asmita Nalawade
+ * @version 1.0
+ * @since   3/12/2018          
+ */
+
 package com.bridgelabz.week3;
 import utility.Utility;
 import java.util.Scanner;

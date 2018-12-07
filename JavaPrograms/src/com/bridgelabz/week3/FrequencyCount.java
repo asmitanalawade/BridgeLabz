@@ -1,3 +1,12 @@
+
+/**
+ * Purpose : This program take the string input from the user and print the frequency
+ *          count of string.
+ * @author  Asmita Nalawade
+ * @version 1.0
+ * @since   6/12/2018          
+ */
+
 package com.bridgelabz.week3;
 
 import utility.Utility;

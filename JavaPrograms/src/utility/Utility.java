@@ -144,15 +144,15 @@ static Scanner sc = new Scanner(System.in);
 	}
 	//******************************************************************************
 	
-	public static void Array(int m, int n, int[][]matrix) {
-		
-		
-		System.out.println("Enter the 2D array");
-		for(int i = 0; i < m; i++)
-			for(int j = 0; j < n; j++)
-				matrix[i][j] = Utility.inputInt();
-				
-	}
+//	public static void Array(int m, int n, int[][]matrix) {
+//		
+//		
+//		System.out.println("Enter the 2D array");
+//		for(int i = 0; i < m; i++)
+//			for(int j = 0; j < n; j++)
+//				matrix[i][j] = Utility.inputInt();
+//				
+//	}
 	//*****************************************************************************
 	
 	public static void SumThreeNum(int n, int arr[]) {
@@ -443,32 +443,11 @@ static Scanner sc = new Scanner(System.in);
 		 }
 	}
 		 
-//***********************************************************************************
+
 	 
-     public static void binaryInteger(int n, int array[], int b) {	 
-    	int first = 0;
-    	int last = array.length-1;
-    	 int mid = (first + last)/2;
-    	 
-    	 while(first <= last) {
-    		 if(array[mid] < b) {
-    			 first = mid +1;
-    		 }else if(first == last) {
-    			 System.out.println("Element found in array " + (mid+1));
-    			 break;
-    		 }else {
-    			 last = mid - 1;
-    		 }
-    		 mid = (first + last)/2;
-    	 }
-    	 if(first < last) {
-    		System.out.println("Element is not found"); 
-    	 }
-     }
-		 
-		
+
 //***********************************************************************************
-     
+ 
      public static String poem(String template,String regexName, String regexSound){ 
     	 Pattern pattern = Pattern.compile(regexName);
     	 Matcher match = pattern.matcher(template);
@@ -483,6 +462,130 @@ static Scanner sc = new Scanner(System.in);
     	 return match.replaceAll(regexFullName);
      }
 	
-	
+//**********************************************************************************************
      
+     public static boolean registerName(String name) {
+    	 boolean status = false;
+    	 Pattern pattern = Pattern.compile("[a-zA-Z]+");
+    	 Matcher match = pattern.matcher(name);
+    	 
+    	 if(match.find() && match.group().equals(name)) {
+    		 
+    		status = true; 
+    	 
+         }else {
+    	  
+        	 System.out.println("Invalid information");
+         }
+      return status;
+      
+     }
+     
+     //*****************************************************
+     
+     public static boolean registerMail(String mail) {
+    	 boolean status = false;
+    	 Pattern pattern = Pattern.compile("[A-Z a-z _0-9]+@.*");
+    	 Matcher match = pattern.matcher(mail);
+    	 if(match.find() && match.group().equals(mail)) {
+    		 
+    		 status = true;
+    	 }else {
+    		 System.out.println("Invalid information");
+    	 }
+    	 
+    	return status;
+    	 
+     }
+    //*******************************************************
+     
+     public static boolean registerContact(String contact) {
+    	 boolean status = false;
+    	 Pattern pattern = Pattern.compile("[7-9][0-9]{9}");
+    	 Matcher match = pattern.matcher(contact);
+    	 if(match.find() && match.group().equals(contact)) {
+    		 
+    		 status = true;
+    	 }else {
+    		 System.out.println("Invalid information");
+    	 }
+    	 
+    	return status;
+    	 
+     }
+     //*****************************************************
+     
+     public static boolean registerCompany(String company) {
+    	 boolean status = false;
+    	 Pattern pattern = Pattern.compile("[A-Za-z]+");
+    	 Matcher match = pattern.matcher(company);
+    	 if(match.find() && match.group().equals(company)) {
+    		 
+    		 status = true;
+    	 }else {
+    		 System.out.println("Invalid information");
+    	 }
+    	 
+    	return status;
+    	 
+     }
+     //*****************************************************
+     public static boolean registerUsername(String username) {
+    	 boolean status = false;
+    	 Pattern pattern = Pattern.compile("[a-z0-9]+");
+    	 Matcher match = pattern.matcher(username);
+    	 if(match.find() && match.group().equals(username)) {
+    		 
+    		 status = true;
+    	 }else {
+    		 System.out.println("Invalid information");
+    	 }
+    	 
+    	return status;
+    	 
+     }
+    //*********************************************************
+     
+     public static boolean registerPassword(String password) {
+    	 boolean status = false;
+    	 Pattern pattern = Pattern.compile("((?=.*[a-z])(?=.*d)(?=.*[@#$%])(?=.*[A-Z]).{8})");
+    	 Matcher match = pattern.matcher(password);
+    	 if(match.find() && match.group().equals(password)) {
+    		 
+    		 status = true;
+    	 }else {
+    		 System.out.println("Invalid information");
+    	 }
+    	 
+    	return status;
+    	 
+     }
+     
+//************************************************************************************
+     
+     
+     public static void find(int high,int low){
+			
+		    //Displaying the value
+		    if(low==high){
+		      System.out.println("Your number is : "+low);
+		      System.out.println("Intermediary numbers is "+(low-1)+" and "+(low+1));
+		      return;
+		    }
+		    //Finding middle value between range low and up
+		     int mid=(low+high)/2;
+		    int ch;
+		    System.out.println("Press 1 : "+low+" - "+mid);
+		    System.out.println("Press 2 : "+(mid+1)+" - "+ high);
+		    ch=Utility.inputInt();
+		    //Number is in first half
+		    if(ch==1){
+		      find(low,mid);
+		    }
+		    //Number is in second half
+		    else{
+		      find(mid+1,high);
+		    }
+		}
+	
 }

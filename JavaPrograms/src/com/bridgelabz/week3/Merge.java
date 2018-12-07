@@ -1,3 +1,12 @@
+
+/**
+ * Purpose : This program take the input from the user and print the string array
+ *          after merge sort.
+ * @author  Asmita Nalawade
+ * @version 1.0
+ * @since   4/12/2018          
+ */
+
 package com.bridgelabz.week3;
 import utility.Utility;
 import java.util.Scanner;

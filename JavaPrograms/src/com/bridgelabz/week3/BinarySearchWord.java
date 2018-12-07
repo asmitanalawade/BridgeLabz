@@ -1,3 +1,13 @@
+
+/**
+ * Purpose : In this program ­read in a list of words from File. Then prompt the user 
+ *      to enter a word to search the list. The program reports if the search word is 
+ *      found in the list.
+ * @author  Asmita Nalawade
+ * @version 1.0
+ * @since   4/12/2018          
+ */
+
 package com.bridgelabz.week3;
 
 import java.io.*;
