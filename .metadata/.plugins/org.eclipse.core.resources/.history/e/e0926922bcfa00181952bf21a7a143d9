@@ -1,0 +1,66 @@
+
+/**
+ * Purpose : This program take the input from the user and print the 2D array of the 
+ *          prime numbers.
+ * @author  Asmita Nalawade
+ * @version 1.0
+ * @since   4/12/2018          
+ */
+
+package com.bridgelabz.week3;
+
+import java.io.*;
+
+
+
+import utility.Utility;
+
+public class PrimeArray {
+
+	private static int[] intArray;
+
+	public static void main(String[] args) throws IOException  {
+		// TODO Auto-generated method stub
+		
+	System.out.println("Enter the number");
+	int a = Utility.inputInt();
+	int k = 1;
+	for(int i = 1; i < a; i++) {
+		boolean status = true;
+		for(int j= 2; j < i; j++) {
+			//Check the condition for prime number
+			while(i % j == 0) {
+			  status = false;
+			  break;
+			}
+		}
+		if(status) {
+			System.out.println(" " + i);
+			
+			
+			intArray[k] = i;
+			k++;
+		}
+		i++;
+		break;
+	 }
+	int array[][] = new int[10][30];
+	int array1[][] = new int[10][30];
+	
+	
+	for(int i = 0; i < 10; i++) {
+		for(int j = 0; j < 30; j++) {
+			System.out.println(array[i][j] + " ");
+		}
+		System.out.println();
+	}
+	
+	
+	
+	
+	
+   }
+	
+
+
+}

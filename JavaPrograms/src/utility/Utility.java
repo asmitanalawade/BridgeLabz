@@ -153,6 +153,9 @@ static Scanner sc = new Scanner(System.in);
 //				matrix[i][j] = Utility.inputInt();
 //				
 //	}
+	
+	
+	
 	//*****************************************************************************
 	
 	public static void SumThreeNum(int n, int arr[]) {
@@ -564,19 +567,25 @@ static Scanner sc = new Scanner(System.in);
 //************************************************************************************
      
      
-     public static void find(int high,int low){
-			
+     public static void find(int low,int high){
+		 // int tries = 0;
 		    //Displaying the value
 		    if(low==high){
 		      System.out.println("Your number is : "+low);
 		      System.out.println("Intermediary numbers is "+(low-1)+" and "+(low+1));
 		      return;
 		    }
-		    //Finding middle value between range low and up
+		    //Finding middle value between range low and high
 		     int mid=(low+high)/2;
 		    int ch;
+		    int tries = 0;
 		    System.out.println("Press 1 : "+low+" - "+mid);
-		    System.out.println("Press 2 : "+(mid+1)+" - "+ high);
+		   
+		    System.out.println("Press 2: "+(mid+1)+" - "+ high);
+		   
+		    
+		    
+		   
 		    ch=Utility.inputInt();
 		    //Number is in first half
 		    if(ch==1){
@@ -587,5 +596,27 @@ static Scanner sc = new Scanner(System.in);
 		      find(mid+1,high);
 		    }
 		}
-	
+//**************************************************************************************
+    public static void arrayaIntDou(int m, int n, int array[][]) {
+    	
+    	//Enter the elements
+   		System.out.println("Enter " + m*n + " element ");
+   		for(int i = 0; i < m ;i++) {
+   			for(int j = 0; j < n; j++) {
+   				array[i][j] = Utility.inputInt();
+   			}
+   		}
+   		
+   		// print 2D array
+   		System.out.println("Enter the 2D array");
+   		for(int i = 0; i < m; i++) {
+   			for(int j = 0; j < n; j++) {
+   			System.out.print(array[i][j] + " ");	
+
+   			}
+   			System.out.println();
+   		}	
 }
+
+    }
+   
