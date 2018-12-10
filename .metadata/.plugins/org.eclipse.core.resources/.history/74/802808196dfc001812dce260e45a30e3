@@ -1,0 +1,21 @@
+package com.bridgelabz.week3;
+
+import com.bridgelabz.week1.Random;
+
+import utility.Utility;
+
+import java.lang.Math;
+
+public class RandomDestinct {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Random ran = new Random();
+		int n = Utility.inputInt();
+		n = 10000%10;
+		System.out.println("random number" + n);
+
+	}
+
+}
