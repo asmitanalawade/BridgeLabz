@@ -1,0 +1,60 @@
+package com.bridgelabz.week3;
+
+import utility.Utility;
+
+public class PalindromeArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int totalNum = 1000;
+		int displayPerLine = 10;
+		int count = 1;
+		int n = 2;
+		
+		while(isPrime(n) && isPalindrome(n,reverse(n))) {
+			 
+			System.out.println(n + " ");
+			if(count % displayPerLine == 0) {
+			    System.out.println();	
+			}
+			count++;
+		}
+		n++;
+		
+		
+		
+	}	
+	public static boolean isPrime(int n) {
+		if(n == 2) {
+			return true;
+		}
+		for(int i = 0; i < n; i++) {
+			for(int j = 2; j < i; j++) {
+				if(i % j == 0) {
+					return false;
+				}
+			}
+			
+		}
+		return true;
+	}
+	public static int reverse(int n){
+		//int digit = 0;
+		
+		int reverseNum = 0;
+		while(n != 0) {
+			
+		   int digit = n % 10;
+			reverseNum = reverseNum * 10 + digit;
+			n = n/ 10;
+		}
+		return reverseNum;
+	}
+	public static boolean isPalindrome(int n, int reverseNum) {
+		
+		return (n == reverseNum); 
+	}
+
+	
+
+}

@@ -10,20 +10,17 @@ public class RandomDestinct {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		ArrayList num = new ArrayList();
-//		
-//		for(int i = 0; i < 5; i++) {
-//			num.add(i+1);
-//		}
-//		Collections.shuffle(num);
-//		
-//		System.out.println(num);
+		ArrayList num = new ArrayList();
 		
-		int n =5;
-		int arr[] = new int[n];
 		for(int i = 0; i < 10; i++) {
-			arr[i] = i;
+			num.add(i+1);
+			//System.out.println(num);
 		}
+		Collections.shuffle(num);
+		
+		System.out.println(num);
+		
+		
 		
 	}
 

@@ -20,7 +20,7 @@ private static BufferedReader br;
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		String file = "/home/admin1/eclipse-workspace/JavaPrograms/src/com/bridgelabz/searchFunction/File.txt";
+		String file = "/home/admin1/eclipse-workspace/JavaPrograms/src/com/bridgelabz/week3/File.txt";
 		File fileName = new File(file);
 		br = new BufferedReader(new FileReader(fileName));
 		String line;
