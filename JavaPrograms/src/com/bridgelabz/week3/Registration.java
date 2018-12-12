@@ -15,38 +15,99 @@ public class Registration {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		String fname,lname,mail,contact,company, username,password;
+		boolean status,status1,status2,status3,status4,status5,status6;
+		
+	do {
 		System.out.println("Enter your first name");
-		String fname = Utility.inputString();
-		boolean status = Utility.registerName(fname);
+	    fname = Utility.inputString();
+		status = Utility.registerName(fname);
 		
 		
 		System.out.println("Enter your last name");
-		String lname = Utility.inputString();
-		boolean status1 = Utility.registerName(fname);
+		lname = Utility.inputString();
+		status1 = Utility.registerName(fname);
 		if(status1)
 		
 		System.out.println("Enter your Email Address");
-		String mail = Utility.inputString();
-		boolean status2 = Utility.registerMail(mail);
+		mail = Utility.inputString();
+		status2 = Utility.registerMail(mail);
 		
 		System.out.println("Enter your contact number");
-		String contact = Utility.inputString();
-		boolean status3 = Utility.registerContact(contact);
+		contact = Utility.inputString();
+		status3 = Utility.registerContact(contact);
 		
 		System.out.println("Enter your company name");
-		String company = Utility.inputString();
-		boolean status4 = Utility.registerCompany(company);
+	    company = Utility.inputString();
+		status4 = Utility.registerCompany(company);
 		
 		System.out.println("Enter your user name");
-		String username = Utility.inputString();
-		boolean status5 = Utility.registerUsername(username);
+		username = Utility.inputString();
+		status5 = Utility.registerUsername(username);
 		
 		System.out.println("Enter your password");
-		String password = Utility.inputString();
-		boolean status6 = Utility.registerPassword(password); 
+		password = Utility.inputString();
+		status6 = Utility.registerPassword(password); 
 		
+		if(status!=status1 || status1 != status2||status2!=status3||status4!=status5||status5!=status6) {
+			System.out.println("Please enter valid information...");
+		}
 		
-    
+     }
+	while(status!=status1 || status1 != status2||status2!=status3||status4!=status5||status5!=status6);
+	
+	 if(status) 
+	 {
+		System.out.println("Enter your first name"); 
+	 }else 
+	 {
+		System.out.println("Invalid information"); 
+	 }
+	 if(status1) 
+	 {
+		System.out.println("Enter your last name"); 
+	 }else 
+	 {
+		System.out.println("Invalid information"); 
+	 }
+	 if(status2) 
+	 {
+		System.out.println("Enter your Email"); 
+	 }else 
+	 {
+		System.out.println("Invalid information"); 
+	 }
+	 if(status3) 
+	 {
+		System.out.println("Enter your contact number"); 
+	 }else 
+	 {
+		System.out.println("Invalid information"); 
+	 }
+	 if(status4) 
+	 {
+		System.out.println("Enter your company name"); 
+	 }else 
+	 {
+		System.out.println("Invalid information"); 
+	 }
+	 if(status5) 
+	 {
+		System.out.println("Enter your username"); 
+	 }else 
+	 {
+		System.out.println("Invalid information"); 
+	 }
+	 if(status) 
+	 {
+		System.out.println("Enter your password"); 
+	 }else 
+	 {
+		System.out.println("Invalid information"); 
+	 }
+	 
+	 
+	
   }
 
 }

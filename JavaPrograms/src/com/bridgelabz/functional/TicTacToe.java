@@ -6,8 +6,8 @@ public class TicTacToe {
 	public static int row, col;
 	public static Scanner sc = new Scanner(System.in);
 	public static char [][] board = new char[3][3];
-	public static char turn = 'x';
-	
+	public static char userturn = 'x';
+	public static char computerturn = 'x';
 	
 
 	public static void main(String[] args) {
@@ -42,21 +42,22 @@ public class TicTacToe {
 					System.out.println("Please enter a row and column");
 					row = sc.nextInt();
 					col = sc.nextInt();
-					board[row][col] = turn;
+					board[row][col] = computerturn;
+			        board[row][col] = userturn;
 					
 					if(GameOver(row, col)) {
 						playing = false;
-						System.out.println(" GameOver! player " + turn + " Win! ");
+						System.out.println(" GameOver! player " + userturn + " Win! ");
 						
 							
 					}
 					printBoard();
 					
-					if(turn == 'x') 
-						turn = 'O';
+					if(userturn == 'x') 
+						computerturn = 'O';
 					else 
 					
-						turn = 'x';
+						userturn = 'x';
 					
 				}
 			}

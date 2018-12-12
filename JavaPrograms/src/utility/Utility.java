@@ -158,33 +158,30 @@ static Scanner sc = new Scanner(System.in);
 	
 	//*****************************************************************************
 	
-	public static int triplet(int n, int arr[]) {
+	public static void triplet(int n, int a[]) {
 		int count = 0;
+		for(int i=0;i<n-2;i++) {
 		
-		int found = 1;
-		for(int i = 0; i < n-2; i++) {
-			for(int j = i+1; j < n-1; j++) {
-				for(int k = j+1; k < n; k++) {
-					
-					if(arr[i]+arr[j]+arr[k] == 0){
-						System.out.print(arr[i]);
-						System.out.print(" ");
-						System.out.print(arr[j]); 
-						System.out.print(" ");
-						System.out.print(arr[k]);
-						System.out.print("\n");
-						found = 1;
-						
-						count++;
-						return count;
-					}
-						
-				}
-			}
+		  for(int j=i+1;j<n-1;j++) {
+		
+		    for(int k=j+1;k<n;k++) {
+		
+		      if(a[i]+a[j]+a[k]==0) {
+		
+		        System.out.println(a[i]+" "+a[j]+" "+a[k]+" ");
+		        count++;
+		      }
+
+		    }
+		  }
+
 		}
-//		if(found == 0)
-//			System.out.println("Not exist");
-			return count;
+		if(count==0) {
+		
+		 System.out.println("Not Exist");
+		}
+		System.out.println("Number of triplets present " +count);
+			
 	}
 	//******************************************************************************
 	
