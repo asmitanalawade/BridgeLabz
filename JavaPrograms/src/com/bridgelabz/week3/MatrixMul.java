@@ -26,14 +26,16 @@ public class MatrixMul {
 		}else {
 			int second[][] = new int[p][q]; 
 			int multiply[][] = new int [m][q];
+			int multiply1[][] = new int[p][n];
 			
 			 System.out.println("Enter elements of second matrix");
-			 int c,d,k;
+			 int c,d=0,k;
 			 int sum = 0;
-	         for (c = 0; c < p; c++)
-	            for (d = 0; d < q; d++)
+	         for (c = 0; c < p; c++) {
+	            for (d = 0; d < q; d++) {
 	               second[c][d] = Utility.inputInt();
-	 
+	            }
+	         }  
 	         for (c = 0; c < m; c++)
 	         {
 	            for (d = 0; d < q; d++)
@@ -50,26 +52,26 @@ public class MatrixMul {
 	         }
 	 
 	         System.out.println("Product of the matrices:");
-	 
+	                                         
 	         for (c = 0; c < m; c++)
 	         {
-	            for (d = 0; d < q; d++)
+	            for (d = 0; d < q; d++) {
 	               System.out.print(multiply[c][d]+"\t");
-	 
+	            }
 	            System.out.print("\n");
 	         }
-	         int multiply1[][] = new int[p][n];
+	         
 	         for (c = 0; c < p; c++)
 	         {
 	            for (d = 0; d < n; d++)
 	            {  
 	               for (k = 0; k < m; k++)
 	               {
-	                  sum = sum + first[c][d]*second[d][k];
+	                  sum = sum + second[c][k]*first[k][d];
 	                  //System.out.println(sum);
 	               }
 	 
-	               multiply[c][d] = sum;
+	               multiply1[c][d] = sum;
 	               sum = 0;
 	            }
 	         }
@@ -79,11 +81,17 @@ public class MatrixMul {
 	         for (c = 0; c < p; c++)
 	         {
 	            for (d = 0; d < n; d++)
-	               System.out.print(multiply[p][d]+"\t");
+	               System.out.print(multiply1[c][d]+"\t");
 	 
 	            System.out.print("\n");
 	      }
-		
+	         
+	         if(multiply[c][d] == multiply1[c][d]) {
+	        	 System.out.println("Product of two matrices are same");
+	         }else {
+	        	 System.out.println("Product of two matrices are not same");
+	         }
+	
 		
 		}
 

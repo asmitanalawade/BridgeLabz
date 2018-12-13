@@ -1,0 +1,54 @@
+package com.bridgelabz.week3;
+
+import utility.Utility;
+
+public class Guess1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n=1;
+    	System.out.println("Enter the range:");
+    	int N=Integer.parseInt(args[0]);
+    	for(int i=1;i<=N;i++)
+    	{
+    		n=n*2;
+    	}
+    	System.out.println("Imagine number between 0 to " +n);
+    	int min=0;
+    	int max=n;
+    	int guess=min+max/2;
+    	char input=' ';
+    	int tries=1;
+    	if(max>=min) {
+    		while(input !='y') {
+    			
+    			System.out.println("y.Is your number"+guess+"?");
+    			System.out.println("y/n");
+    			input=Utility.inputString().charAt(0);
+    			if(input == 'n')
+    			{
+    			System.out.println("h.Is your number higher than "+ guess+"?");
+    			System.out.println("l.Is your number lower than "+ guess+"?");
+    			input=Utility.inputString().charAt(0);
+    			if(input=='h')
+        		{
+        		    min=guess;
+        		    guess=(max+min)/2;
+        		    tries++;
+        		}
+        		else if(input=='l') {
+        			max=guess;
+        			guess=(max+min)/2;
+        			tries++;
+            	}
+    			}
+    		
+          
+    	    }
+    		}
+    	System.out.println(tries+" tries required to find "+guess);
+    	
+
+	}
+
+}

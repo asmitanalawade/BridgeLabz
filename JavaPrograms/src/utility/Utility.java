@@ -17,7 +17,7 @@ static Scanner sc = new Scanner(System.in);
 		return sc.nextDouble();
 	}
 	public static String inputString() {
-		return sc.nextLine();
+		return sc.next();
 	}
 
 	
@@ -562,6 +562,7 @@ static Scanner sc = new Scanner(System.in);
     		 status = true;
     	 }else {
     		 System.out.println("Invalid information");
+    		 status = false;
     	 }
     	 
     	return status;

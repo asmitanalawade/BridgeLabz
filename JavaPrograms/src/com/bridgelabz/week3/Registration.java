@@ -98,7 +98,7 @@ public class Registration {
 	 {
 		System.out.println("Invalid information"); 
 	 }
-	 if(status) 
+	 if(status6) 
 	 {
 		System.out.println("Enter your password"); 
 	 }else 

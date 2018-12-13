@@ -13,7 +13,7 @@ public class GuessNumber {
 	     // Scanner scanner = new Scanner(System.in);
 	      System.out.println("Enter the number");
 	      int a = Utility.inputInt();
-		  int number = (int) Math.pow(2, a);
+		  int n = (int) (Math.pow(2, a));
 		  //int number = 50;
 	      //int number = (int)(Math.random()*(50 + 1));	
 //	      int min = 0;
@@ -35,45 +35,42 @@ public class GuessNumber {
 //	      }
 //	      System.out.println("It took you " + count + " trys.");
 		  
-		  System.out.println("Think of a number between 0 and " + (number-1) );
-            int min = 0;
-		    int max = number;
-		    int guess = (max+min)/2;
-		    int tries = 0;
-		    int input = 0;
-		    while(input!=2)
-	        {
-	            System.out.println("\nIs your number "+ guess +"...??\n");
-	           
-	            System.out.println("Press 1:Is your number between " +min+ " and" +(guess-1)+ "\n");
-	           
-	            System.out.println("Press 2:Yes, this is your number\n");
-	           
-	            System.out.println("Press 3:Is your number between " +(guess+1)+ " and " +(max-1)+ "\n");
-	           
-	            input = Utility.inputInt();
-	           
-	            if(input == 1)
-	            {
-	                max = guess;
-	               
-	                guess = min + (guess-min)/2;
-	               
-	                tries++;
-	            }
-	            else if(input == 3) 
-	            {
-	                min = guess;
-	               
-	                guess = guess + (max - guess)/2;
-	               
-	                tries++;
-	            }
-	        }
-	       
-	        System.out.println("It took "+ tries + " tries to guess "+ guess);
-		    
-		    
+		  System.out.println("Imagine number between 0 to " +n);
+	    	int min=0;
+	    	int max=n;
+	    	int guess=min+max/2;
+	    	char input=' ';
+	    	int tries=1;
+	    	if(max>=min) {
+	    		while(input !='y') {
+	    			
+	    			System.out.println("Is your number"+guess+"?");
+	    			System.out.println("y/n");
+	    			input=Utility.inputString().charAt(0);
+	    			if(input == 'n')
+	    			{
+	    			System.out.println("h.Is your number higher than "+ guess+"?");
+	    			System.out.println("l.Is your number lower than "+ guess+"?");
+	    			input=Utility.inputString().charAt(0);
+	    			if(input=='h')
+	        		{
+	        		    min=guess;
+	        		    guess=(max+min)/2;
+	        		    tries++;
+	        		}
+	        		else if(input=='l') {
+	        			max=guess;
+	        			guess=(max+min)/2;
+	        			tries++;
+	            	}
+	    			}
+	    		
+	          
+	    	    }
+	    		}
+	    	System.out.println(tries+" tries required to find "+guess);
+	    	
+
 		   
 		    
 	}
