@@ -45,7 +45,7 @@ public class GuessNumber {
 	    		while(input !='y') {
 	    			
 	    			System.out.println("Is your number"+guess+"?");
-	    			System.out.println("y/n");
+	    			System.out.println("yes/no");
 	    			input=Utility.inputString().charAt(0);
 	    			if(input == 'n')
 	    			{
@@ -68,7 +68,7 @@ public class GuessNumber {
 	          
 	    	    }
 	    		}
-	    	System.out.println(tries+" tries required to find "+guess);
+	    	System.out.println("Number of tries "+guess);
 	    	
 
 		   

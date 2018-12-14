@@ -26,7 +26,7 @@ public class MatrixMul {
 		}else {
 			int second[][] = new int[p][q]; 
 			int multiply[][] = new int [m][q];
-			int multiply1[][] = new int[p][n];
+			
 			
 			 System.out.println("Enter elements of second matrix");
 			 int c,d=0,k;
@@ -60,7 +60,23 @@ public class MatrixMul {
 	            }
 	            System.out.print("\n");
 	         }
-	         
+		}
+		
+	       if(q != m) {
+	    	   System.out.println("The two matrices can't multiplied");
+	       }else {
+	    	   int second[][] = new int[p][q]; 
+	    	   int third[][] = new int[p][q]; 
+	    	   int multiply1[][] = new int[p][n];
+	    	  // System.out.println("Enter elements of second matrix");
+				 int c,d=0,k;
+				 int sum = 0;
+		         for (c = 0; c < p; c++) {
+		            for (d = 0; d < q; d++) {
+		               third[c][d] = second[c][d];
+		            }
+		         }  
+	    	  
 	         for (c = 0; c < p; c++)
 	         {
 	            for (d = 0; d < n; d++)
@@ -80,17 +96,17 @@ public class MatrixMul {
 	 
 	         for (c = 0; c < p; c++)
 	         {
-	            for (d = 0; d < n; d++)
+	            for (d = 0; d < n; d++) {
 	               System.out.print(multiply1[c][d]+"\t");
-	 
+	            }
 	            System.out.print("\n");
 	      }
 	         
-	         if(multiply[c][d] == multiply1[c][d]) {
-	        	 System.out.println("Product of two matrices are same");
-	         }else {
-	        	 System.out.println("Product of two matrices are not same");
-	         }
+//	         if(multiply[c][d] == multiply1[c][d]) 
+//	        	 System.out.println("Product of two matrices are same");
+//	         else 
+//	        	 System.out.println("Product of two matrices are not same");
+	         
 	
 		
 		}

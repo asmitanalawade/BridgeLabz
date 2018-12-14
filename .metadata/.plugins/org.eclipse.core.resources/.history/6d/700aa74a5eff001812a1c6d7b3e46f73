@@ -1,0 +1,23 @@
+package com.bridgelabz.week3;
+
+import utility.Utility;
+
+public class DeterminantMatrix {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Enter the rows and columns of first matrix");
+		int m = Utility.inputInt();
+		int n = Utility.inputInt();
+		int M[][] = new int [m][n];
+		System.out.println("Enter the first matrix");
+		for(int i = 0; i < m; i++) {
+			for(int j = 0; j < n; j++) {
+				M[i][j] = Utility.inputInt();
+			}
+		}
+		 int a = M[0][0]*( M[1][1]* M[2][2]-M[1][2]*M[2][1]);
+		System.out.println(" " + a);
+	}
+
+}
