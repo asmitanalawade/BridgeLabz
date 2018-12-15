@@ -1,11 +1,13 @@
 package com.bridgelabz.week3;
 
+import utility.Utility;
+
 public class RandomWalk {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		 int n = Integer.parseInt(args[0]);
+		System.out.println("Enetr the number");
+		 int n = Utility.inputInt();
 		    // x positions
 		    int[] x = new int[n]; 
 		    // y positions
@@ -35,7 +37,7 @@ public class RandomWalk {
 	            for (int i = 0; i < n; i++) {
 	                r = Math.random();
 	                if(r <= 0.25) { 
-	                	System.out.println(x[i]);
+	                	//System.out.println(x[i]);
 	                	x[i]++;
 	            } else if (r <= 0.50) 
 	                	x[i]--;

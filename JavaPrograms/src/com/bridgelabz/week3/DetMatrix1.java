@@ -16,18 +16,21 @@ public class DetMatrix1 {
 				N[i][j] = Utility.inputInt();
 			}
 		}
-		 int a = N[0][0]*N[1][1]-N[0][1]*N[1][0];
-		 System.out.println("Determinant of 2 by 2 matrix is:" + a);
+		 int d = N[1][1]*N[2][2]-N[1][2]*N[2][1];
+		 System.out.println("Determinant of 2 by 2 matrix4 is:" + d);
 		 int b = N[0][1]*N[1][2]-N[0][2]*N[1][1];
 		 System.out.println("Determinant of 2 by 2 matrix1 is:" + b);
+		 int a = N[0][0]*N[1][1]-N[0][1]*N[1][0];
+		 System.out.println("Determinant of 2 by 2 matrix is:" + a);
+		 int s = N[0][0]*N[1][2]-N[0][2]*N[1][0];
+		 System.out.println("Determinant of 2 by 2 matrix5 is:" + s);
+		
 		 int c = N[1][0]*N[2][1]-N[1][1]*N[2][0];
 		 System.out.println("Determinant of 2 by 2 matrix2 is:" + b);
 		 int x = N[1][0]*N[2][2]-N[1][2]*N[2][0];
 		 System.out.println("Determinant of 2 by 2 matrix3 is:" + c);
-		 int d = N[1][1]*N[2][2]-N[1][2]*N[2][1];
-		 System.out.println("Determinant of 2 by 2 matrix4 is:" + d);
-		 int s = N[0][0]*N[1][2]-N[0][2]*N[1][0];
-		 System.out.println("Determinant of 2 by 2 matrix5 is:" + s);
+		
+		
 		 int p = N[0][0]*N[2][2]-N[0][2]*N[2][0];
 		 System.out.println("Determinant of 2 by 2 matrix6 is:" + p);
 		 int q = N[0][0]*N[2][1]-N[0][1]*N[2][0];

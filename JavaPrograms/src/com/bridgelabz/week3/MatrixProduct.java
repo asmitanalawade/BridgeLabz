@@ -88,11 +88,11 @@ public class MatrixProduct {
 		            }
 		            System.out.print("\n");
 		      }
-		         if(multiply[c][d] == multiply1[c][d]) {
-		        	 System.out.println("Product of two matrix is same");
-		         }else {
-		        	 System.out.println("Product of two matrix is not same");
-		         }
+//		         if(multiply[c][d] == multiply1[c][d]) {
+//		        	 System.out.println("Product of two matrix is same");
+//		         }else {
+//		        	 System.out.println("Product of two matrix is not same");
+//		         }
 
 	       }
          
