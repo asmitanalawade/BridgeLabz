@@ -7,6 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.bridgelabz.functional.Permutation;
+import com.bridgelabz.functionsandlibraries.MathFunctions;
 
 public class Utility {
 static Scanner sc = new Scanner(System.in);
@@ -776,9 +777,33 @@ static Scanner sc = new Scanner(System.in);
 			
 			 return result;
 		}
-	    
+//*************************************************************************************************************
+	    public static String oldMac(String template,String regexName, String regexSound){ 
+	    	 Pattern pattern = Pattern.compile(regexName);
+	    	 Matcher match = pattern.matcher(template);
+	    	 return match.replaceAll(regexSound);
+	    	 
+	     }
 	   
-    
+//**************************************************************************************************************
+	    
+	    public static void maxMin(int n, int[] array, int max, int min) {
+			
+			for(int i = 0 ; i < n; i++) {
+				array[i] =Utility.inputInt();
+			}
+			for(int i = 0; i < n; i++) {
+				if(array[i] > n) 
+					max = array[i];
+				else if(array[i] < n)
+					min = array[i];
+					
+			}
+			System.out.println("Maximum value is = " + max);
+			System.out.println("Minimum value is = " + min);
+		}
+		
+	
 }    
     
    

@@ -49,17 +49,15 @@ public class Birthday {
 	            {
 	                        // reset counter
 	 
-	                        // need inner loop: 0 - 4999 trials
+	                       
 	 
 	                        // reset birthdayset
 	 
 	                                // nextInt(364) will return numbers in the range of: 0 - 363
 	                number = (int)(Math.random()*(12) + 1);
 	                if (birthdayset.contains(number)) {
-	                                        // once you find a match and bump counter
-	                                        // you'll need to go to the next trial
-	                                        // you don't care if there is more than one
-	                                        // match in the room
+	                  // once you find a match and bump counter increases
+	                                       
 	                    counter++;
 	                } else {
 	                    birthdayset.add(number);
@@ -71,7 +69,7 @@ public class Birthday {
 	             
 	         
 	        
-	        System.out.println(counter + " people have the same birthdates");
+	        System.out.println(counter + " people have the birthdates in same month");
     }
 
 }
