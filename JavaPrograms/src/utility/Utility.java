@@ -787,15 +787,14 @@ static Scanner sc = new Scanner(System.in);
 	   
 //**************************************************************************************************************
 	    
-	    public static void maxMin(int n, int[] array, int max, int min) {
-			
-			for(int i = 0 ; i < n; i++) {
-				array[i] =Utility.inputInt();
-			}
-			for(int i = 0; i < n; i++) {
-				if(array[i] > n) 
+	    public static void maxMin(int array[]) {
+	    	int max = 0;
+			int min = 0;
+
+			for(int i = 0; i < array.length; i++) {
+				if(array[i] > array.length) 
 					max = array[i];
-				else if(array[i] < n)
+				else if(array[i] < array.length)
 					min = array[i];
 					
 			}

@@ -455,7 +455,7 @@ public class Util1 {
 		
 		{	
 			int count = 0, curr_cnt = 1, freq_num = 0, key = 0;
-		for(int i = 0; i < size-1; i++)
+		for(int i = 0; i < size; i++)
 		{
 		     key = arr[i];
 		     
@@ -465,6 +465,7 @@ public class Util1 {
 		         if(key == arr[j] && freq_num != key)
 		         {
 		             curr_cnt++;
+		             System.out.println(curr_cnt);
 		         }
 		     }
 		     //check current count greater than count
