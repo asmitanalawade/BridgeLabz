@@ -1,8 +1,8 @@
 package utility;
 
+import java.io.*;
 import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -801,7 +801,73 @@ static Scanner sc = new Scanner(System.in);
 			System.out.println("Maximum value is = " + max);
 			System.out.println("Minimum value is = " + min);
 		}
-		
+//*******************************************************************************************************************
+	    public static int[] bubbleSort(int ar[],int k)
+		{
+			int i,j;
+			for (i = 0; i < k-1; i++)
+	            for (j = 0; j < k-i-1; j++)
+	                if (ar[j] > ar[j+1])
+	                {
+	                    // swap temp and arr[i]
+	                    int temp = ar[j];
+	                    ar[j] = ar[j+1];
+	                    ar[j+1] = temp;
+	                }
+			return ar;
+		}
+	    
+	    
+	    
+	    public static void writeAllToFile(String fileName, String content)
+	    
+		{
+			try
+			{
+				FileWriter filewriter=new FileWriter(fileName);
+				BufferedWriter bufferedwriter=new BufferedWriter(filewriter);
+				bufferedwriter.write(content);
+				bufferedwriter.close();
+			}
+			catch(FileNotFoundException fileNotFoundException)
+			{
+				System.out.println("your file is not found in the location '"+fileName+"'");
+			}
+			catch(IOException ioException)
+			{
+				System.out.println("Error in reading your file '"+fileName+"'");
+			}
+		}
+
+
+
+
+
+		public static String readAllFromFile(String fileName)
+		{
+			String line=null;
+			String readedFile="";
+			try 
+			{
+				FileReader filereader=new FileReader(fileName);
+				BufferedReader bufferedReader=new BufferedReader(filereader);
+				while((line=bufferedReader.readLine())!= null)
+				{
+					readedFile+=line;
+				}
+				bufferedReader.close();
+			}
+			catch(FileNotFoundException fileNotFoundException)
+			{
+				System.out.println("your file is not found in the location '"+fileName+"'");
+			}
+			catch(IOException ioException)
+			{
+				System.out.println("Error in reading your file '"+fileName+"'");
+			}
+			return readedFile;
+
+		}
 	
 }    
     
