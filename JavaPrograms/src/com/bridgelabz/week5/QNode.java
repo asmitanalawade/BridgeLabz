@@ -1,52 +1,86 @@
 package com.bridgelabz.week5;
 
-public class QNode {
+import java.util.NoSuchElementException;
 
-	int key;
-	QNode next;
+public class QNode<T> {
+
+	T key;
+	QNode<T> next;
+	public String data;
 	
 
 	
-	public QNode(int key) {
+	public QNode(T key) {
 		this.key = key;
 		this.next = null;
 	}
-}	
+
+
+
+	public QNode() {
+		this.key = key;
+		this.next = null;
+	}
+
+
+}
+	
+	
 	
 //***************************************************************************************************************
 	
-    class Queue{
-		 QNode front, rear; 
+    class Queue<T>{
+		 QNode<T> front, rear; 
 		 int size = 0;
+		 int data;
 	       
 //**********************************************************   
 	
 	public Queue() { 
-	   this.front = this.rear = null; 
+	   front = rear = null; 
     } 
 	
 //************************************************************	
 	
-	public void enqueue(int key) {
-		QNode temp = new QNode(key);
-		if(this.rear == null) {
-			this.front=this.rear=temp;
-			return;
+	  public void enqueue(int data) {
+		
+		  QNode temp = new QNode(data);
+		
+		  if(isEmpty()) {
+			front = temp;
+			rear = front;
 		}
-		this.rear.next = temp;
-		this.rear = temp;
+		  else {
+		
+			  rear.next = temp;
+		  }
+			  rear = temp;
+			  size++;
 		
 	}
 	
 //*************************************************************
-	public QNode dequeue() {
-		if(this.front == null)
-			return null;
-		QNode temp = this.front;
-		this.front = this.front.next;
-		if(this.front == null)
-			this.rear = null;
-		   return null;
+	public String dequeue() {
+		
+		String result = null;
+		if(isEmpty()) {
+			 throw new NoSuchElementException("Queue is already empty");
+		}
+		else {
+			QNode<T> temp = front;
+			
+		 result = front.data;
+			
+			front = front.next;
+			
+//			if(front == null)
+//				rear = null;
+//			   return null;
+		}
+		
+		return result;
+			
+		
 	}
 //************************************************************
 	
@@ -59,5 +93,26 @@ public class QNode {
 		 
 		return size;
 	 }
+//**************************************************************
 	 
-}
+	 public void show() {
+			
+			if(isEmpty()) {
+				
+			return;
+			
+			}
+			else {
+				
+				QNode<T> current = front;
+				
+				while(current != null) {
+				
+					System.out.print(current.data + "-->");
+					current = current.next;
+				}
+				
+        	}
+	 }		
+  
+}    

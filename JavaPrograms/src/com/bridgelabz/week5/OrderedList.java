@@ -36,7 +36,7 @@ public class OrderedList {
 	        for(int i=0;i<counter;i++)
 	        {
 	            System.out.print(a[i]+" ");
-	            listInt.addInt(a[i]);	//fill the array with the integers
+	            listInt.addLast(a[i]);	//fill the array with the integers
 	        }
 	
 	        boolean isEmpty = listInt.isEmpty();
@@ -59,7 +59,7 @@ public class OrderedList {
 		else
 		{	
 			//System.out.println("Element not found..");
-			listInt.addInt(search);
+			listInt.addLast(search);
 			listInt.display();
 		}	
 		

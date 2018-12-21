@@ -26,7 +26,7 @@ public class OrderedLinkedList<T> {
     }    
     
     /*  Function to insert an element at end  */
-    public void addInt(T val)
+    public void addLast(T val)
     {
     	int data;
     	Node<T> next = null; 
@@ -42,6 +42,16 @@ public class OrderedLinkedList<T> {
 		{
 			ptr.next = n;
 			ptr = n;
+		}
+    }
+    
+    public void addAtPosition(T val) {
+		if(head == null) {
+			return;
+		}else {
+			Node<T> newNode = new Node<T>(val);
+			newNode.next = head;
+			head = newNode;
 		}
     }
 

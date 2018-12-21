@@ -15,22 +15,34 @@ public class StackParentheses {
 		for(int i = 0; i < exp.length(); i++) {
 			if((exp.charAt(i)=='(') ||( exp.charAt(i)=='{') || (exp.charAt(i)=='[')) {
 				stack.push(exp.charAt(i));
-			}else if(!exp.isEmpty() &&(
-					  (stack.peek() == '[' && exp.charAt(i) == ']')||
-					  (stack.peek()== '{' && exp.charAt(i) == '}')||
-					  (stack.peek()== '(' && exp.charAt(i) == ')'))) {
+			}else if((exp.charAt(i)==')') ||( exp.charAt(i)=='}') || (exp.charAt(i)==']')&&
+				(!exp.isEmpty())) {
+			
+				if((exp.charAt(i) == ']' && stack.peek() == '[')||
+					(exp.charAt(i)== '{' && stack.peek()== '{')||
+					(exp.charAt(i) == ')' && stack.peek()== '(')) {
 						  
 				stack.pop();
 			}else {
 				
-				stack.push(exp.charAt(i));
+				System.out.println("Expression is balanced");
+				
+			}
+		   
+			}else {  
+				if((exp.charAt(i)==')') ||( exp.charAt(i)=='}') || (exp.charAt(i)==']')) {
+					System.out.println("Expression is not balanced");
+				}
+					
 			}
 		}
 		
 		if(stack.isEmpty()) {
 			System.out.println("Expression is balanced");
+		
 		}
-		else {
+		else  {
+			
 			System.out.println("Expression is not balanced");
 		}
     }
