@@ -45,6 +45,18 @@ public class Stack<T> {
     		 
     	 }
      }
+     
+//     public void push(String data) {
+//    	 Node<String> newNode = new Node<T>(data);
+//    	 if(top == null) {
+//    		 top = newNode;
+//    	 }else {
+//    		 newNode.next = top;
+//    		 top = newNode;
+//    		 size++;
+//    		 
+//    	 }
+//     }
 //********************************************************************************
      
      public T pop() {
@@ -66,5 +78,30 @@ public class Stack<T> {
          }
     	 return top.data;
     	 
-     }	 
+     }	
+     
+     //****************************************************************************
+     
+     public void display() {
+			
+			if(isEmpty()) {
+				
+				return;
+			}
+			else {
+			
+			for(Node<T> current = top; current != null; current = current.next) {
+				
+				System.out.print(current.data + "  ");
+				
+				
+				}
+			//System.out.print(current.data);
+			System.out.println();
+		
+			
+			}
+			
+		}
+		
 }

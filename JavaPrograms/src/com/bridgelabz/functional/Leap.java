@@ -8,8 +8,8 @@ public class Leap {
 		// TODO Auto-generated method stub
 		
 		System.out.println("Enter the year");
-		int n = Utility.inputInt();
-		Utility.leap(n);
+		int year = Utility.inputInt();
+		Utility.leap(year);
 		
 	}
 

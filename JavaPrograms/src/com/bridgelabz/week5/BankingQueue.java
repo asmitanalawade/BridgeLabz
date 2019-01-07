@@ -11,14 +11,14 @@ public class BankingQueue {
 		int amount = sc.nextInt();
 		System.out.println("Enter the number of people");
 		int people = sc.nextInt();
-		Queue queue = new Queue();
+		QNode<Integer> queue = new QNode<Integer>();
 		
 		for(int i = 1; i <= people; i++) {
 			
 			queue.enqueue(i);
 			
 		}
-		// queue.show();
+		 queue.display();
 			
 		  for(int i=1; i <= people; i++) { 
 			  
@@ -40,7 +40,7 @@ public class BankingQueue {
 			      
 			      queue.dequeue();
 			 }
-		     // queue.show();
+		      queue.display();
 		      
 		    if(choice == 2) {
 		    	System.out.println("Enter the withdraw amount");

@@ -22,7 +22,7 @@ public class MaxMin {
 			
 		//System.out.println(line);
 		//break;
-         String arr[] = {};
+        String arr[] = {};
          
 		
 		//System.out.println( n);

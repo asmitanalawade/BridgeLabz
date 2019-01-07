@@ -4,115 +4,100 @@ import java.util.NoSuchElementException;
 
 public class QNode<T> {
 
-	T key;
-	QNode<T> next;
-	public String data;
+	public Node<T> front;
+	public Node<T> rear;
+	public int length;
 	
-
+//***************************************************************************
 	
-	public QNode(T key) {
-		this.key = key;
-		this.next = null;
-	}
-
-
-
-	public QNode() {
-		this.key = key;
-		this.next = null;
-	}
-
-
-}
-	
-	
-	
-//***************************************************************************************************************
-	
-    class Queue<T>{
-		 QNode<T> front, rear; 
-		 int size = 0;
-		 int data;
-	       
-//**********************************************************   
-	
-	public Queue() { 
-	   front = rear = null; 
-    } 
-	
-//************************************************************	
-	
-	  public void enqueue(int data) {
+	public void Queue() {
 		
-		  QNode temp = new QNode(data);
-		
-		  if(isEmpty()) {
-			front = temp;
-			rear = front;
-		}
-		  else {
-		
-			  rear.next = temp;
-		  }
-			  rear = temp;
-			  size++;
-		
+		this.front = null;
+		this.rear = null;
+		length = 0;
 	}
 	
-//*************************************************************
-	public String dequeue() {
+//****************************************************************************
+	
+	public int length() {
 		
-		String result = null;
+		return length;
+	}
+//****************************************************************************
+	
+	public boolean isEmpty() {
+		
+		return length ==0;
+	}
+	
+//*****************************************************************************
+	
+	public void enqueue(T data) {
+		
+		Node <T> temp = new Node(data);
+		
 		if(isEmpty()) {
-			 throw new NoSuchElementException("Queue is already empty");
+			
+			front = temp;
 		}
 		else {
-			QNode<T> temp = front;
 			
-		 result = front.data;
+			rear.next = temp;
+		}
+		rear = temp;
+		
+		length++;
+	}
+	
+//**********************************************************************************
+	
+	public T dequeue() {
+		
+		T result = null;
+		
+		if(isEmpty()) {
+			
+			throw new NoSuchElementException("Queue is already empty");
+		}
+		else {
+			
+			
+			result = front.data;
 			
 			front = front.next;
 			
-//			if(front == null)
-//				rear = null;
-//			   return null;
+			if(front == null) {
+				
+				rear = null;
+			}
+			length--;
 		}
 		
-		return result;
-			
+	
+		return result;	
 		
 	}
-//************************************************************
 	
-	 public boolean isEmpty() {
-	    	return front == null;
-	 }
-	 
-//*************************************************************
-	 public int size() {
-		 
-		return size;
-	 }
-//**************************************************************
-	 
-	 public void show() {
+//******************************************************************************************
+	
+	public void display() {
+		
+		if(isEmpty()) {
 			
-			if(isEmpty()) {
+		return;
+		
+		}
+		else {
+			
+			Node <T> current = front;
+			
+			while(current != null) {
 				
-			return;
-			
+				System.out.print(current.data + " ");
+				current = current.next;
 			}
-			else {
-				
-				QNode<T> current = front;
-				
-				while(current != null) {
-				
-					System.out.print(current.data + "-->");
-					current = current.next;
-				}
-				
-        	}
+			
+}
 	 }		
   
 }    

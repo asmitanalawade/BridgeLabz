@@ -2,120 +2,152 @@ package com.bridgelabz.week5;
 
 public class DNode<T> {
 	
-	String data;
-	DNode<T> prev;
-	DNode<T> next;
-}
-
- class Deque<T>{
-	 
 	
-	DNode<T> front;
-	DNode<T> rear;
-	int size;
-	
-	
-//	public void deque() {
-//		front = rear = null;
-//		size = 0;
-//	}
-	
-	
-	public int size(){
-		return size;
-	}
-	
-	public void isEmpty() {
-		 front = null;
-	}
-	
-	//*********************************
-	
-	public void addFront(int data) {
-		DNode<T> newNode = new DNode<T>();
-		
-		if(newNode == null) {
-			System.out.println("Overflow");
-		}else if(front == null){
-			front = rear = newNode;
-		}else {
-			newNode.next = front;
-			front.prev = newNode;
-			front = newNode;
-		}
-		size++;
-	}
-//*********************************************
-	
-	public void addRear(int data) {
-		DNode<T> newNode = new DNode<T>();
-		
-		if(newNode == null) {
-			System.out.println("Overflow");
-		}else if(rear == null) {
-			front = rear = newNode;
-		}else {
-			newNode.next = rear;
-			rear.prev = newNode;
-			rear = newNode;
-		}
-		size++;
-	}
-	
-//****************************************************
-	public void deleteFront() {
-		
-		if(front == null) {
-			System.out.println("Underflow");
-		}else {
-			DNode<T> temp = front;
-			front = front.next;
+	    public Node<T> prev;
+		public Node<T> front;
+		public Node<T> rear;
+		public int length;
+	//*********************************************************	
+		public void addToFront(T data) {
 			
-			if(front == null)
-				rear = null;
-			else
-				front.next = null;
-			size--;
-		}
-	}
-//*********************************************************
-	
-	public void deleteRear() {
-		
-		if(rear == null) {
-			System.out.println("Underflow");
-		}else {
-			DNode<T> temp = rear;
-			rear = rear.next;
+			Node<T> temp = new Node<T>(data);
 			
-			if(rear == null)
-				front = null;
-			else
-				rear.next = null;
-			   size--;
+			//if no element in list
+			if(front == null) {
+			
+				front = temp;
+				
+				rear = front;
+			}
+			else {  //if element in list
+			
+			//	Node<T> temp = new Node<T>(data);
+				
+				temp.data = data;
+				
+				temp.next = front;
+				
+				front.prev=temp;
+				
+				front = temp;
+			}
+			length++;
 		}
-	}
-	
-//**********************************************************
-	
-	 
-	 public void show() {
+		
+	//***************************************************************
+		public void addTORear(T data) {
 			
 			if(front == null) {
 				
-			return;
-			
+				Node<T> temp = new Node<T>(data);
+				
+				front = temp;
+				
+				rear = front;
 			}
 			else {
 				
-				DNode<T> current = front;
+				Node<T> temp = new Node<T>(data);
 				
-				while(current != null) {
+				temp.data = data;
 				
-					System.out.print(current.data + "-->");
-					current = current.next;
+				rear.next = temp;
+				
+				temp.prev = rear;
+				
+				rear = temp;
+				
+			}
+			length++;
+			}
+	//*******************************************************************
+		
+		public T removeFront() {
+			
+			T result = null;
+			
+			if(front == null) {
+				
+				System.out.println("Queue is empty");
+			}
+			else {
+				
+				result = front.data;
+				
+				front = front.next;
+				
+				length--;
+			}
+			return result;
+		}
+		
+	//*********************************************************************
+		
+		public T removeRear() {
+			
+			T result = null;
+			
+			if(front == null) {
+				
+				System.out.println("Queue is Empty");
+			}
+			else {
+				
+				 result = rear.data;
+				
+				rear = rear.prev;
+				
+				rear.next = null;
+				
+				length--;
+				
+				
+			}
+			return result;
+			
+		}
+		
+	//************************************************************************
+		
+		public void display() {
+			
+			if(isEmpty()) {
+				
+				return;
+			}
+			else {
+			
+			for(Node<T> current = front; current != null; current = current.next) {
+				
+				System.out.print(current.data + "-->");
+				
+				
 				}
+			//System.out.print(current.data);
+			System.out.println();
+		//	System.out.print("null");
+			
+			}
+			
+		}
+		
+	//***********************************************************************
+		
+			public boolean isEmpty() {
 				
-       	}
-	 }		
+				if(length == 0) {
+					
+					return true;
+				}
+					
+				
+				return false;
+				
+			}
+	//***************************************************************************
+			
+			public int size() {
+				
+				return length;
+	}
 }

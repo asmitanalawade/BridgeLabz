@@ -1,4 +1,4 @@
-package com.bridgelabz.week5;
+ package com.bridgelabz.week5;
 
 public class MyLinkedList <T> {
 	
@@ -30,6 +30,28 @@ public class MyLinkedList <T> {
 		
 	}
 	
+public void add1(String data) {
+		
+		Node<String> newNode = new Node<String>(data);
+		newNode.data = data;
+		newNode.next = null;
+		if(head == null) {
+			head = (Node<T>) newNode;
+		}else {
+			
+			Node<T> temp = head;
+			while(temp.next != null) {
+				temp = temp.next;
+			}
+			temp.next = (Node<T>) newNode;
+		}
+		
+				
+		
+		
+		
+	}
+	
 //*****************************************************************************************	
 	
 	public void display()
@@ -37,7 +59,7 @@ public class MyLinkedList <T> {
 		Node<T> current = head;
 		
 		while(current != null) {
-			System.out.println(current.data );
+			System.out.println(current.data);
 			current = current.next;
 		}
 

@@ -9,6 +9,8 @@
 
 package com.bridgelabz.week3;
 import utility.Utility;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Insertion {

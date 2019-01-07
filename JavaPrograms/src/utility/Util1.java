@@ -515,10 +515,10 @@ public class Util1 {
 	 public static int Smallest(int n, int array[]) {
 		 //Print second smallest number
 		 // Initialize the smallest second smallest number
-			int smallest = 0;
-			int secondSmallest = 0;
+			int smallest = array[0];
+			int secondSmallest = array[0];
 			for(int i = 0; i < n; i++) {
-				//Compairing ith element with smallest number
+				//Comparing ith element with smallest number
 				if(array[i] == smallest) {
 					secondSmallest = smallest;
 					//Find the smallest number in array[i]

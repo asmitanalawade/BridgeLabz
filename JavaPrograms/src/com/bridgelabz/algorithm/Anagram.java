@@ -15,8 +15,8 @@ public class Anagram {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String str1 = "abcd";
-		String str2 = "dcba";
+		String str1 = "abcd12";
+		String str2 = "dcba21";
 		Utility.isAnagram(str1, str2);
 		
 	}

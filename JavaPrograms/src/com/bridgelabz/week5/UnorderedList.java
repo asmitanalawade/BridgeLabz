@@ -62,11 +62,7 @@ public class UnorderedList {
 						temporary+=list.get(j)+" ";
 						//System.out.print(list.get(j)+" ");
 					}
-					
-					//System.out.println("\nString is :\t"+temporary);
-					
-					
-					
+						
 				//write a file to specfied path and store the number in the list
 				Utility.writeAllToFile("/home/admin1/eclipse-workspace/JavaPrograms/src/com/bridgelabz/week5/Samp.txt", temporary);
 				String readedFile2=Utility.readAllFromFile("/home/admin1/eclipse-workspace/JavaPrograms/src/com/bridgelabz/week5/Samp.txt");

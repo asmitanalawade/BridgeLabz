@@ -50,12 +50,12 @@ static Scanner sc = new Scanner(System.in);
 	}
 	//***********************************************************************************
 
-	public static void leap(int n) {
+	public static void leap(int year) {
 		// Number should be four digit number
-		if(n >= 1000) {
+		if(year >= 1000) {
 			System.out.println("It is a Four digit number");
 			// Find the leap year
-			if(n%4 == 0) {
+			if(year%4 == 0) {
 				System.out.println("Leap year");
 			}else {
 				System.out.println("Not a leap year");
@@ -201,7 +201,7 @@ static Scanner sc = new Scanner(System.in);
 				
 				str = swap(str, s, i);
 				permute(str, s+1, e);
-				str = swap(str, s, i);
+			//	str = swap(str, s, i);
 			}
 				
 		}
@@ -271,7 +271,7 @@ static Scanner sc = new Scanner(System.in);
 	
 	public static void isAnagram(String str1,String str2) {
 		String s1 = str1.replaceAll("\\n", " ");
-		String s2 = str2.replaceAll("\\n", " ");
+		String s2 = str2.replaceAll("\\n", "");
 		boolean status = true;
 		if(s1.length() != s2.length()) {
 		  status = false;
@@ -279,7 +279,7 @@ static Scanner sc = new Scanner(System.in);
 		}else {
 	
 			char[] s1Array = s1.toCharArray();
-			char[] s2Array = s2.toCharArray();
+			char[] s2Array = s2.toCharArray();                                                                                                                            
 			Arrays.sort(s1Array);
 			Arrays.sort(s2Array);
 			status = Arrays.equals(s1Array,s2Array);
